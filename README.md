@@ -44,6 +44,7 @@ names(pango)
 #read metadata#
 meta <- read.csv("metadata_14896.tsv", header=TRUE, sep="\t")
 names(meta)
+#optional: you may select some columns#
 meta <- meta[,c(1:7,9)]
 
 #transform each fasta to data.frame#
@@ -73,6 +74,7 @@ j,by="taxon", all.x=TRUE),
 k,by="taxon", all.x=TRUE),
 l,by="taxon", all.x=TRUE)
 
+#estimate the number of rows and columns to your data#
 dim(m)
 names(m)[1:100]
 
@@ -94,6 +96,6 @@ res[[1]]
 1. Use "mutation_bars" to obtain a graphical representation of the variable sites represented by a minimum number of genomes in your data
 2. Use "mutation_bars" to obtain a complete metadata in csv format including mutation sites that you can map in your phylogenetic tree for a visual inspection in https://microreact.org/ 
 
-This code was designed by Victor Jimenez Vasquez - vr.jimenez.vs@gmail.com.
+This code was designed by Victor Jimenez Vasquez - vr.jimenez.vs@gmail.com 
 
 Vic
