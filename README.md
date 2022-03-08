@@ -93,3 +93,7 @@ res[[1]]
 ## Usage
 1. Use "mutation_bars" to obtain a graphical representation of the variable sites represented by a minimum number of genomes in your data
 2. Use "mutation_bars" to obtain a complete metadata in csv format including mutation sites that you can map in your phylogenetic tree for a visual inspection in https://microreact.org/ 
+
+This code was designed by Victor Jimenez Vasquez - vr.jimenez.vs@gmail.com.
+
+Vic
