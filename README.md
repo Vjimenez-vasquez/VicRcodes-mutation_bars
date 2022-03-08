@@ -6,7 +6,8 @@ This code was designed by Victor Jimenez Vasquez - vr.jimenez.vs@gmail.com.
 ![graphic1](https://user-images.githubusercontent.com/89874227/156581714-857a724b-d9fd-4abf-a4df-84b5e8c1cfda.jpg)
 
 ## Intro
-(working ...)
+
+Identification of variable sites in SARS-CoV-2 Genomes 
 
 ## Usage 
 ```r
@@ -19,9 +20,8 @@ library(ggplot2)
 library(gridExtra)
 source("C:/Users/USUARIO/Documents/Rcodes/barras_mutaciones/complementario/convert_improved.R")
 
-
-fastameta_to_df(fasta,gene,pango,label)
-r <- data.frame(dir()[6:17])
+#identify the first element containing the first coding (Envelope) fasta file (x) and the last element containing the last coding (Spike) fasta file (y)#
+r <- data.frame(dir()[x:y])
 
 #read fasta files#
 E <- read.fasta(r[1,])
