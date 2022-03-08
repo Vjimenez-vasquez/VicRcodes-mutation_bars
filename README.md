@@ -87,12 +87,9 @@ res[[1]]
 ```
 
 ## Output
-1. A barplot for the aminoacid frequency per variable site identified in 
- a minimum number of genomes as especified in "genomas" argument. 
-2. A data table in csv format containing a metadata plus variable
- sites columns as specified in a minimum number of genomes (genomas).
+1. A barplot for the aminoacid frequency per variable site identified in a minimum number of genomes as especified in "genomas" argument. 
+2. A data table in csv format containing a metadata plus variable sites columns identified in a minimum number of genomes as especified in "genomas" argument. 
  
-
-
 ## Usage
-(working ...) 
+1. Use "mutation_bars" to obtain a graphical representation of the variable sites represented by a minimum number of genomes in your data
+2. Use "mutation_bars" to obtain a complete metadata in csv format including mutation sites that you can map in your phylogenetic tree for a visual inspection in https://microreact.org/ 
