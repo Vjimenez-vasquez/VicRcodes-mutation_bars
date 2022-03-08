@@ -7,7 +7,7 @@ This code was designed by Victor Jimenez Vasquez - vr.jimenez.vs@gmail.com.
 
 ## Intro
 
-Identification of variable sites in SARS-CoV-2 Genomes 
+Genomic surveillance of SARS-CoV-2 include the identification of variable sites at aminoacid and genome levels. Mutation_bars allows the user the identification of variable sites in a given data set composed of FASTA files, metadata downloaded from GISAID and lineage report obtained from PANGOLIN. 
 
 ## Usage 
 ```r
