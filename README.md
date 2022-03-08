@@ -87,7 +87,12 @@ res[[1]]
 ```
 
 ## Output
-(working ...)
+1. A barplot for the aminoacid frequency per variable site identified in 
+ a minimum number of genomes as especified in "genomas" argument. 
+2. A data table in csv format containing a metadata plus variable
+ sites columns as specified in a minimum number of genomes (genomas).
+ 
+
 
 ## Usage
 (working ...) 
