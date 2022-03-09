@@ -88,7 +88,7 @@ res <- barras2(data=n,linaje="BA.1",genomas=5,run="omicron",label="coding",inic=
 #arguments#
 data : input containing sites for all coding regions and metadata
 linaje : lineage
-genomas : the minimum number of genomes containing changes in your input
+genomas : the minimum number of genomes in which the program will search for variable sites in your input
 run : word to be print in the resulting barplot
 label : output file name 
 inic : the first column number containing aminoacid information in your input
