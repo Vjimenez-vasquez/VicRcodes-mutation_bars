@@ -1,4 +1,4 @@
-# vic_R_codes-mutation_bars
+# VicRcodes-mutation_bars
 
 
 This code was designed by Victor Jimenez Vasquez - vr.jimenez.vs@gmail.com.
