@@ -22,6 +22,7 @@ library(gridExtra)
 source("mutation_bars.R")
 
 #2# identify the first element containing the first coding (Envelope) fasta file (x) and the last element containing the last coding (Spike) fasta file (y)#
+data.frame(dir())
 r <- data.frame(dir()[x:y])
 
 #3# read fasta files#
