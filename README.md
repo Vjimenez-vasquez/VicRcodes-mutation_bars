@@ -11,19 +11,20 @@ Genomic surveillance of SARS-CoV-2 include the identification of variable sites 
 
 ## Usage 
 ```r
-#setwd#
-setwd("C:/Users/USUARIO/Documents/ensayos_omicron/omicron_240122/nextclade_omicron")
+#1# setwd and load libraries#
+setwd("F:/sarscov2/variations/phylo/progress_2020/origins/filogenia_2020")
+
 data.frame(dir())
 library(seqinr)
 library(tidyr)
 library(ggplot2)
 library(gridExtra)
-source("C:/Users/USUARIO/Documents/Rcodes/barras_mutaciones/complementario/convert_improved.R")
+source("mutation_bars.R")
 
-#identify the first element containing the first coding (Envelope) fasta file (x) and the last element containing the last coding (Spike) fasta file (y)#
+#2# identify the first element containing the first coding (Envelope) fasta file (x) and the last element containing the last coding (Spike) fasta file (y)#
 r <- data.frame(dir()[x:y])
 
-#read fasta files#
+#3# read fasta files#
 E <- read.fasta(r[1,])
 M <- read.fasta(r[2,])
 N <- read.fasta(r[3,])
@@ -37,17 +38,20 @@ orf8 <- read.fasta(r[10,])
 orf9b <- read.fasta(r[11,])
 s <- read.fasta(r[12,])
 
-#read pango file#
+#4# read pango file#
 pango <- read.csv("lineage_report.csv", header=TRUE)
 names(pango)
+pango <- pango[,c(1:2)]
 
-#read metadata#
-meta <- read.csv("metadata_14896.tsv", header=TRUE, sep="\t")
+#5# read metadata#
+meta <- read.csv("2020_metadata.tsv", header=TRUE, sep="\t")
 names(meta)
-#optional: you may select some columns#
-meta <- meta[,c(1:7,9)]
 
-#transform each fasta to data.frame#
+#6# optional: you may select some columns#
+meta <- meta[,c(1:7,9)]
+names(meta) <- c("taxon","virus","gisaid_epi_isl","genbank_accession","date","region","country","location")
+
+#7# transform each fasta to data.frame#
 a <- fastameta_to_df(fasta=E,gene="E",pango=pango,label=2)
 b <- fasta_to_df(fasta=M,gene="M")
 c <- fasta_to_df(fasta=N,gene="N")
@@ -61,7 +65,7 @@ j <- fasta_to_df(fasta=orf8,gene="ORF8")
 k <- fasta_to_df(fasta=orf9b,gene="ORF9b")
 l <- fasta_to_df(fasta=s,gene="S")
 
-#merge data.frames by taxon column#
+#8# merge data.frames by taxon column#
 m <- merge(merge(merge(merge(merge(merge(merge(merge(merge(merge(merge(a,b,by="taxon", all.x=TRUE),
 c,by="taxon", all.x=TRUE),
 d,by="taxon", all.x=TRUE),
@@ -74,24 +78,26 @@ j,by="taxon", all.x=TRUE),
 k,by="taxon", all.x=TRUE),
 l,by="taxon", all.x=TRUE)
 
-#estimate the number of rows and columns to your data#
+#9# estimate the number of rows and columns to your data#
 dim(m)
-names(m)[1:100]
+names(m)[1:20]
 
-#generate final input#
+#10# generate final input#
 n <- merge(meta,m,by="taxon", all.x=FALSE)
 dim(n)
 names(n)[1:100]
 
-res <- barras2(data=n,linaje="BA.1",genomas=5,run="omicron",label="coding",inic=21)
+#11# final command#
+res <- barras2(data=n,linaje="BA.1",genomas=5,run="peru_2020",label="coding",inic=10)
 
-#arguments#
+#12# arguments#
 data : input containing sites for all coding regions and metadata
 linaje : lineage
 genomas : the minimum number of genomes in which the program will search for variable sites in your input
 run : word to be print in the resulting barplot
 label : output file name 
 inic : the first column number containing aminoacid information in your input
+
 ```
 
 ## Output
