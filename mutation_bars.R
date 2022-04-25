@@ -318,5 +318,5 @@ print(ff2)
 print(mutates_sites) 
 x <- structure(3,class=c(S3,S5,ff2,mutates_sites))
 return(x)
+write.csv(S5, file=paste0(label,"positions.csv"), row.names=FALSE)
 }
-
