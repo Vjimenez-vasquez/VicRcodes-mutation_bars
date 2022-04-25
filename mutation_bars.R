@@ -304,6 +304,7 @@ S4$aa <- toupper(S4$aa)
 S5 <- data.frame(Position=paste0(S4[,1],S4[,2]),S4)
 S5 <- S5[order(S5$site,S5$freq),]
 S5 <- data.frame(S5,lin=rep(linaje,dim(S5)[1]))
+write.csv(S5, file=paste0(label,"_positions.csv"), row.names=FALSE)
 
 library(ggplot2)
 ff <- ggplot(S5, aes(x=reorder(S5$Position,as.numeric(S5$site)), y=S5$freq, fill=site))
