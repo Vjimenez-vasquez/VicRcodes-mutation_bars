@@ -43,6 +43,7 @@ s <- read.fasta(r[12,])
 pango <- read.csv("lineage_report.csv", header=TRUE)
 names(pango)
 pango <- pango[,c(1:2)]
+names(pango) <- c("taxon","lineage")
 
 #5# read metadata#
 meta <- read.csv("2020_metadata.tsv", header=TRUE, sep="\t")
@@ -89,7 +90,7 @@ dim(n)
 names(n)[1:100]
 
 #11# final command#
-res <- barras2(data=n,linaje="BA.1",genomas=5,run="peru_2020",label="coding",inic=10)
+res <- barras2(data=n,linaje="BA.1",genomas=10,run="peru_2020",label="coding",inic=10)
 
 #12# arguments#
 data : input containing sites for all coding regions and metadata
